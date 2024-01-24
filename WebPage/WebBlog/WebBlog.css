@@ -1,0 +1,383 @@
+@import url('/base.css');
+
+/* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 768px */
+@media only screen and (max-width: 768px) {
+    .header__navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .header__navbar-navPage {
+        min-width: 0;
+    
+    }
+
+    .header__navbar-navPage--button {
+        font-size: 1.4rem;
+        border-radius: 50px;
+        background: none;
+        border: none;
+        padding: 5px 10px;
+        position: relative;
+        line-height: 1;
+        
+    }
+
+    .header__navbar-logo--name {
+        display: none;
+    }
+
+    .header__search {
+        margin: 0 20px ;
+    }
+
+    .header__search-input {
+        display: none;
+    }
+   
+
+    .header__search:hover .header__search-input {
+        display: flex;
+        
+    }
+
+    .header__search:not(:hover) .header__navbar-logo--img,
+    .header__search:not(:hover) .header__navbar-logo--name {
+        display: none;
+    }
+    
+}
+
+/* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 560px */
+@media only screen and (max-width: 560px) {
+    .header{
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .header__navbar{
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        
+    }
+    
+    .header__navbar-logo {
+        position: absolute;
+        width: 100%; 
+        margin-right: auto;
+        justify-content: center;
+        order: 2;
+        flex-grow: 6;
+        
+    }
+   
+
+
+    .header__mobile-menu {
+        display: block !important;
+        order: 1;
+        flex-grow: 1;
+    }
+    /*****************************************************/
+    
+    .header__mobile-menu--menu-list {
+      display: block;
+      
+        width: 59px;
+        height: 50px;
+      background: var(--primary-color);
+      -webkit-clip-path: circle(24px at 30px 24px);
+      clip-path: circle(24px at 32px 24px);
+      -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+      transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+    }
+    
+    .header__mobile-menu--menu-list:hover {
+        position: absolute;
+        width: 200px;
+        top: 30px;
+        opacity: 0.9;
+        -webkit-transition-timing-function: ease-out;
+        transition-timing-function: ease-out;
+        -webkit-transition-duration: 0.75s;
+        transition-duration: 0.75s;
+        -webkit-clip-path: circle(390px at 32px 24px);
+        clip-path: circle(390px at 32px 24px);
+    }
+    .header__mobile-menu--menu-list .menu-box {
+        display: none;
+        /* Bạn có thể thêm các thuộc tính khác cho phần .menu-box tại đây */
+    }
+    
+    .header__mobile-menu--menu-list:not(:hover) .menu-box {
+        display: none;
+    }
+    
+    .header__mobile-menu--menu-list:hover .menu-box {
+        display: block;
+        top: 48px;
+        /* Hoặc sử dụng display: flex, display: inline, hoặc các giá trị khác tùy thuộc vào yêu cầu của bạn */
+    }
+    
+    .b {
+      display: block;
+      line-height: 50px;
+      padding: 0 20px;
+      color: inherit;
+      cursor: pointer;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+    
+    .b:hover { background: #ffe082; }
+    
+    .b:active { background: #ffca28; }
+    
+    .header__mobile-menu--menu-icon {
+      padding: 20px 20px;
+      border-radius: 50%;
+      cursor: pointer;
+      -webkit-transform-origin: 32px 24px;
+      -ms-transform-origin: 32px 24px;
+      transform-origin: 32px 24px;
+    }
+    
+    .header__mobile-menu--menu-icon {
+       display: block;
+    font-size: 2rem;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: none;
+        transform: translate(4px, -6px);
+    }
+    
+    /****/
+    
+    /*******************************/
+    .header__navbar-navPage{
+        display: none;
+    }
+    .header__search{
+        display: none !important;
+    }
+    
+
+    .header__quote{
+        order: 3;
+    }
+
+    
+
+    .header__quote-button {
+        flex-grow: 2;
+        order: 3;
+    }
+    
+    
+}
+
+/* Phần CSS chung */
+.header {
+    height: var(--header-height);
+    width: 100%;
+    border: 5px;
+    border-color: var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.header__navbar {
+    height: 100%;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__navbar-logo {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    margin: 0 20px;
+    padding: 0 20px;
+}
+
+.header__navbar-logo--img {
+    display: block;
+    width: 68px;
+    height: 68px;
+    left: 60px;
+    margin: 6px;
+}
+
+.header__navbar-logo--name {
+    width: 15%;
+    height: 40px;
+    top: 40px;
+    left: 185px;
+    font-family: Montserrat;
+    font-size: 3.4rem;
+    font-weight: 700;
+    line-height: 40px;
+    letter-spacing: 0px;
+    text-align: justify;
+    color: var(--main-color);
+}
+
+.header__navbar-logo--menu {
+    display: none;
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+    list-style: none;
+    padding: 0;
+}
+
+.header__navbar-navPage {
+    min-width: 35%;
+    padding: 0 20px;
+}
+
+.header__navbar-navPage--button {
+    font-family: inherit;
+    font-size: 1.6rem;
+    line-height: 1.15;
+    padding: 10px 20px;
+    border-radius: 50px;
+    background: none;
+    border: none;
+    position: relative;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.header__navbar-navPage--button:hover {
+    cursor: pointer;
+    background-color: var(--primary-color);
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.header__navbar-navPage--button:hover::before {
+    content: '';
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+    
+}
+
+.header__navbar-navPage--button a {
+    width: 96px;
+    height: 24px;
+    top: 68px;
+    left: 455px;
+    font-family: Montserrat;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 24px;
+    letter-spacing: 0px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.header__search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    /* min-width: 50% !important; */
+    z-index: 1;
+}
+.header__search-input-wrap{
+    display: flex;
+    padding: 10px;
+    font-size: 1.6rem;
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    position: relative;
+    justify-content: space-between;
+    
+}
+
+.header__search-input {
+    
+    width: 85%;
+    border: none;
+}
+input {
+    outline: none;
+    margin: 0 10px;
+    min-width: 30px;
+    
+}
+
+.header__search-btn {
+    position: relative;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header__search-btn-icon {
+    color: var(--text-color);
+    width: 100%;
+    padding-left: 15px;
+}
+
+.header__search-btn:hover {
+    background-color: #333 50%;
+    opacity: 0.1;
+    font-size: 1.4rem;
+}
+
+.header__quote {
+    background-color: var(--main-color);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1.4rem;
+    margin: 20px;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.header__quote-button {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: var(--white-color);
+    font-size: 1.4rem;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.header__quote:hover,
+.header__quote-button:hover {
+    background-color: var(--border-color);
+    opacity: 0.99;
+    cursor: pointer;
+}
+.header__mobile-menu{
+    display: none;
+}
+.header__navbar-logo--menu{
+    display: block;
+}
+.header__navbar-logo--menu-icon{
+    display: inline-block;
+    color: var(--text-color);
+    font-size: 2rem;
+}
+/* --body-- */
+body{
+    border-color: var(--text-color);
+    border-radius: 10px;
+}
