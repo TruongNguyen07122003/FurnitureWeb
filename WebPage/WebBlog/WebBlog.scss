@@ -222,6 +222,7 @@
 
     .header__quote {
         order: 3;
+        z-index: 3;
     }
 
 
@@ -230,6 +231,7 @@
         flex-grow: 2;
         order: 3;
     }
+    
 
 
 }
@@ -253,7 +255,11 @@
     justify-content: center;
     border-bottom: 2px solid var(--border-color);
 }
-
+.logo-link{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
 .header__navbar-logo {
     display: flex;
     text-align: center;
