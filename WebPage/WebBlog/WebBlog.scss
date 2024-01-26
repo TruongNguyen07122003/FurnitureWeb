@@ -11,7 +11,7 @@
 
     .header__navbar-navPage {
         min-width: 0;
-    
+
     }
 
     .header__navbar-navPage--button {
@@ -22,7 +22,7 @@
         padding: 5px 10px;
         position: relative;
         line-height: 1;
-        
+
     }
 
     .header__navbar-logo--name {
@@ -30,51 +30,51 @@
     }
 
     .header__search {
-        margin: 0 20px ;
+        margin: 0 20px;
     }
 
     .header__search-input {
         display: none;
     }
-   
+
 
     .header__search:hover .header__search-input {
         display: flex;
-        
+
     }
 
     .header__search:not(:hover) .header__navbar-logo--img,
     .header__search:not(:hover) .header__navbar-logo--name {
         display: none;
     }
-    
+
 }
 
 /* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 560px */
 @media only screen and (max-width: 560px) {
-    .header{
+    .header {
         display: flex;
         justify-content: space-between;
     }
-    
-    .header__navbar{
+
+    .header__navbar {
         height: 100%;
         display: flex;
         flex-direction: row;
         align-items: center;
-        
+
     }
-    
+
     .header__navbar-logo {
         position: absolute;
-        width: 100%; 
+        width: 100%;
         margin-right: auto;
         justify-content: center;
         order: 2;
         flex-grow: 6;
-        
+
     }
-   
+
 
 
     .header__mobile-menu {
@@ -82,25 +82,29 @@
         order: 1;
         flex-grow: 1;
     }
+
     /*****************************************************/
-    
+
     .header__mobile-menu--menu-list {
-      display: block;
-      
+        display: block;
+
         width: 59px;
         height: 50px;
-      background: var(--primary-color);
-      -webkit-clip-path: circle(24px at 30px 24px);
-      clip-path: circle(24px at 32px 24px);
-      -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
-      transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+        background: var(--primary-color);
+        -webkit-clip-path: circle(24px at 30px 24px);
+        clip-path: circle(24px at 32px 24px);
+        z-index: 20;
+        -webkit-transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
+        transition: -webkit-clip-path 0.5625s, clip-path 0.375s;
     }
-    
+
     .header__mobile-menu--menu-list:hover {
         position: absolute;
         width: 200px;
-        top: 30px;
-        opacity: 0.9;
+        top: 28px;
+        opacity: 0.99;
+        border-top-right-radius: 5px;
+        border-top-left-radius: 5px;
         -webkit-transition-timing-function: ease-out;
         transition-timing-function: ease-out;
         -webkit-transition-duration: 0.75s;
@@ -108,79 +112,126 @@
         -webkit-clip-path: circle(390px at 32px 24px);
         clip-path: circle(390px at 32px 24px);
     }
-    .header__mobile-menu--menu-list .menu-box {
-        display: none;
-        /* Bạn có thể thêm các thuộc tính khác cho phần .menu-box tại đây */
-    }
-    
-    .header__mobile-menu--menu-list:not(:hover) .menu-box {
-        display: none;
-    }
-    
-    .header__mobile-menu--menu-list:hover .menu-box {
-        display: block;
-        top: 48px;
-        /* Hoặc sử dụng display: flex, display: inline, hoặc các giá trị khác tùy thuộc vào yêu cầu của bạn */
-    }
-    
+
+
     .b {
-      display: block;
-      line-height: 50px;
-      padding: 0 20px;
-      color: inherit;
-      cursor: pointer;
-      -webkit-user-select: none;
-      -moz-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-    }
-    
-    .b:hover { background: #ffe082; }
-    
-    .b:active { background: #ffca28; }
-    
-    .header__mobile-menu--menu-icon {
-      padding: 20px 20px;
-      border-radius: 50%;
-      cursor: pointer;
-      -webkit-transform-origin: 32px 24px;
-      -ms-transform-origin: 32px 24px;
-      transform-origin: 32px 24px;
-    }
-    
-    .header__mobile-menu--menu-icon {
-       display: block;
-    font-size: 2rem;
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: none;
-        transform: translate(4px, -6px);
-    }
-    
-    /****/
-    
-    /*******************************/
-    .header__navbar-navPage{
-        display: none;
-    }
-    .header__search{
-        display: none !important;
+        font-size: 1.4rem;
+        font-weight: 500;
+        display: block;
+        position: relative;
+        top: 9px;
+        background-color: var(--white-color);
+        text-align: left;
+        line-height: 50px;
+        padding: 0 20px;
+        color: inherit;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
     }
     
 
-    .header__quote{
+    .b:hover {
+        background:var(--highlight-color);
+
+    }
+
+    .b:active {
+        background: var(--highlight-color);
+    }
+
+    .header__mobile-menu--menu-icon {
+        
+        padding: 20px 20px;
+        border-radius: 50%;
+        cursor: pointer;
+        -webkit-transform-origin: 32px 24px;
+        -ms-transform-origin: 32px 24px;
+        transform-origin: 32px 24px;
+    }
+
+    .header__mobile-menu--menu-icon {
+        display: block;
+        font-size: 2rem;
+        /* position: absolute; */
+        width: 20px;
+        height: 20px;
+        background: none;
+        transform: translate(4px, -6px);
+    }
+
+    /****/
+    /*menu-search*/
+    .menu__search-box{
+        position: relative;
+        top: auto;
+    }
+    .menu__search-box.menu__search-wrap{
+
+        padding: 10px 0 ;
+    }
+    .menu__search-wrap{
+        width: 100%;
+        display: flex;
+        padding: 15px 2px;
+        font-size: 1.4rem;
+        top: 10px;
+        border: 2px solid var(--main-color);
+        border-radius: 10px;
+        background-color: var(--white-color);
+        z-index: 1;
+        
+        position: relative;
+        justify-content: space-between;
+    }
+    .menu__search-input{
+        width: 85%;
+       
+        
+    }
+    input{
+        margin: 0 2px;
+    }
+    .menu__search-btn{
+        position: relative;
+        background-color: transparent;
+        cursor: pointer;
+    }
+    .menu__search-btn:hover{
+        background-color: #333 50%;
+        opacity: 0.1;
+    }
+    .menu__search-btn-icon{
+        background-color: none;
+        font-size: 1.6rem;
+        color: var(--text-color);
+        width: 100%;
+        transform: translateX(-8px);
+    }
+    /*******************************/
+    .header__navbar-navPage {
+        display: none;
+    }
+
+    .header__search {
+        display: none !important;
+    }
+
+
+    .header__quote {
         order: 3;
     }
 
-    
+
 
     .header__quote-button {
         flex-grow: 2;
         order: 3;
     }
-    
-    
+
+
 }
 
 /* Phần CSS chung */
@@ -200,6 +251,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
+    border-bottom: 2px solid var(--border-color);
 }
 
 .header__navbar-logo {
@@ -274,7 +326,7 @@ ul {
     background-color: rgba(255, 255, 255, 0.3);
     border-radius: 50px;
     transition: background-color 0.3s ease, opacity 0.3s ease;
-    
+
 }
 
 .header__navbar-navPage--button a {
@@ -300,7 +352,8 @@ ul {
     /* min-width: 50% !important; */
     z-index: 1;
 }
-.header__search-input-wrap{
+
+.header__search-input-wrap {
     display: flex;
     padding: 10px;
     font-size: 1.6rem;
@@ -308,37 +361,42 @@ ul {
     border-radius: 50px;
     position: relative;
     justify-content: space-between;
-    
+
 }
 
 .header__search-input {
-    
+
     width: 85%;
     border: none;
 }
+
 input {
     outline: none;
     margin: 0 10px;
     min-width: 30px;
-    
+
 }
 
 .header__search-btn {
     position: relative;
     background-color: transparent;
     cursor: pointer;
+    outline: none !important;
+
 }
 
 .header__search-btn-icon {
     color: var(--text-color);
     width: 100%;
     padding-left: 15px;
+    border: none;
 }
 
 .header__search-btn:hover {
     background-color: #333 50%;
     opacity: 0.1;
     font-size: 1.4rem;
+    outline: none;
 }
 
 .header__quote {
@@ -357,6 +415,7 @@ input {
     color: var(--white-color);
     font-size: 1.4rem;
     transition: background-color 0.3s ease, opacity 0.3s ease;
+    outline: none !important;
 }
 
 .header__quote:hover,
@@ -364,20 +423,133 @@ input {
     background-color: var(--border-color);
     opacity: 0.99;
     cursor: pointer;
+    outline: none !important;
 }
-.header__mobile-menu{
+
+.header__mobile-menu {
     display: none;
 }
-.header__navbar-logo--menu{
+
+.header__navbar-logo--menu {
     display: block;
 }
-.header__navbar-logo--menu-icon{
+
+.header__navbar-logo--menu-icon {
     display: inline-block;
     color: var(--text-color);
     font-size: 2rem;
 }
+
 /* --body-- */
-body{
-    border-color: var(--text-color);
-    border-radius: 10px;
+.body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--white-color);
+    height: 600px;
+    width: 100%;
+    height: 70vh;
+    
+}
+.grid{
+    height: 100%;
+}
+/* Trong CSS của bạn */
+.hero-carousel {
+    .single-carousel {
+      img {
+        width: 100%;
+        height: 80vh;
+        object-fit: cover;
+        object-position: 50% 50%;
+      }
+      
+    }
+    
+  }
+  .slick-prev{
+    position: absolute;
+    z-index: 1;
+    left: 3%;
+    top: 50%;
+  }
+  .slick-next{
+    z-index: 1;
+    top: 50%;
+    right: 3%;
+    position: absolute;
+  }
+ .slick-prev, .slick-next{
+    font-size: 3rem;
+    padding: 10px 20px;
+    background-color: transparent;
+    color: var(--text-color);
+    font-weight: 500;
+    outline: none;
+    text-decoration: none;
+    border-radius: 50%;
+ }
+ .slick-prev:hover, .slick-next:hover{
+    
+    background-color: var(--primary-color) ;
+    opacity: 0.5;
+    
+    
+ }
+ .fa-angle-left,.fa-angle-right{
+    background-color: transparent;
+    text-decoration: none;
+    color: var(--white-color);
+ }
+/***************foooter*************************/
+footer{
+    margin:10px 0 0 0;
+    display: flex;
+   height: 12vh;
+    
+}
+.footer-box{
+    position: relative;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    background-color: var(--primary-color);
+}
+.web-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 3%;
+    width: 50%;
+    .contact{
+        display: block;
+        justify-content: flex-start;
+        font-size: 1.6rem;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    .info{
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}
+.follow-us{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .follow-title{
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+    }
+    .logo-box{
+        display: flex;
+        justify-content: space-between;
+        font-size: 2rem;
+        color: var(--text-color);
+        width: 15%;
+    }
 }

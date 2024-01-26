@@ -2,7 +2,7 @@
     padding:0;
     margin: 0;
     border: none;
-    box-sizing: border-box;
+    box-sizing: border-box !important;
     
 }
 :root {
@@ -12,6 +12,8 @@
     --text-color:#333333;
     --border-color:#D6D6D6;
     --white-color:#ffffff;
+    --highlight-color: #f9da6d;
+    
    
    
 
@@ -29,6 +31,7 @@ html{
     box-sizing: border-box;
 }
 /*responsive*/
+
 .grid{
     width: 1200px;
     max-width: 100%;
