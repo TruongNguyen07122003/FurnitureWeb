@@ -245,6 +245,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    border-bottom: 2px solid var(--border-color);
 }
 
 .header__navbar {
@@ -253,7 +254,7 @@
     text-align: center;
     align-items: center;
     justify-content: center;
-    border-bottom: 2px solid var(--border-color);
+    
 }
 .logo-link{
     display: flex;
@@ -468,6 +469,7 @@ input {
         height: 80vh;
         object-fit: cover;
         object-position: 50% 50%;
+        transition: opacity 0.5s ease;
       }
       
     }
