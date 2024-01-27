@@ -3,8 +3,19 @@
     margin: 0;
     border: none;
     box-sizing: border-box !important;
+   
     
+} 
+a {
+    text-decoration: none;
+    text-decoration-style: none;
 }
+a:-webkit-any-link {
+    color: var(--main-color)
+    cursor: pointer;
+    text-decoration: none;
+}
+
 :root {
     --primary-color:#DFE9F4;
     --main-color: #054C73;
@@ -17,7 +28,7 @@
    
    
 
-    --header-height: 100px;
+    --header-height: auto;
     --navbar-height: 34px;
    
 }
