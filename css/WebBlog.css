@@ -405,16 +405,49 @@ main {
 }
 
 .row {
+  width: 100% !important;
+  margin: 20px 0;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(223, 233, 244, 0.4);
+  padding: 0 3%;
 }
-
-.newProject-box {
+.row .newProject-box {
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.row .newProject-box .project-title {
+  margin: auto;
+  font-size: 2.6rem;
+  font-weight: 800;
+  padding: 20px;
+  left: 0;
+}
+.row .newProject-box .project-description {
+  padding: 20px;
+  font-size: 1.4rem;
+  justify-content: flex-start;
+}
+.row .pro-img {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.row .pro-img .img {
+  border-radius: 5px;
+}
+
+.row-2 {
+  width: 100% !important;
+  margin: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 3%;
+  height: 100%;
 }
 
 /* Trong CSS của bạn */
@@ -432,22 +465,23 @@ main {
 .slick-prev {
   position: absolute;
   z-index: 1;
-  left: 3%;
+  left: -3%;
   top: 50%;
 }
 
 .slick-next {
   z-index: 1;
   top: 50%;
-  right: 3%;
+  right: 10px;
   position: absolute;
+  right: -3%;
 }
 
 .slick-prev, .slick-next {
   font-size: 2rem;
   padding: 6px 12px;
   background-color: transparent;
-  color: var(--text-color);
+  color: var(--main-color);
   font-weight: 500;
   outline: none;
   text-decoration: none;
@@ -462,13 +496,74 @@ main {
 .fa-angle-left, .fa-angle-right {
   background-color: transparent;
   text-decoration: none;
-  color: var(--white-color);
+  color: var(--main-color);
 }
 
-.newProject-box,
+.newProject-box {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.pro-img {
+  width: 100%;
+  height: 100%;
+}
+.pro-img .img {
+  width: 100%;
+}
+
+.hero-carousel {
+  width: 100%;
+  height: 100%;
+}
+
 .body-carousel-box {
   height: 100%;
   width: 100%;
+}
+.body-carousel-box .item {
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 5px;
+}
+
+.body-picture {
+  width: 100%;
+  height: auto;
+}
+
+.hero-carousel .single-carousel img {
+  width: 100%;
+  height: 30vh;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.create-project {
+  font-size: 3rem;
+  font-weight: 800;
+  border-radius: 50px;
+  padding: 20px 30px;
+  border: none;
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-size: 1.4rem;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
+  outline: none !important;
+}
+
+.create-project:hover {
+  background-color: var(--border-color);
+  opacity: 0.99;
+  cursor: pointer;
+  outline: none !important;
 }
 
 /***************foooter*************************/

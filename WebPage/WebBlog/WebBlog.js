@@ -5,7 +5,7 @@ $('.single-carousel').slick({
     arrows: true,
         prevArrow: '<button class="slick-prev"><i class=" fa fa-angle-left"></i></button>',
         nextArrow: '<button class="slick-next"><i class="fa fa-angle-right"></i></button>',
-    slidesToShow: 3,
+    slidesToShow: 5,
     responsive: [
       {
         breakpoint: 768,
@@ -13,7 +13,7 @@ $('.single-carousel').slick({
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 3
+          slidesToShow: 4
         }
       },
       {
@@ -22,7 +22,7 @@ $('.single-carousel').slick({
           arrows: false,
           centerMode: true,
           centerPadding: '40px',
-          slidesToShow: 1
+          slidesToShow: 2
         }
       }
     ]
