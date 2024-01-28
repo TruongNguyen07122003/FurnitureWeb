@@ -38,7 +38,7 @@
   }
 }
 /* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 560px */
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 650px) {
   .header {
     display: flex;
     justify-content: space-between;
@@ -431,13 +431,21 @@ main {
   font-size: 1.4rem;
   justify-content: flex-start;
 }
+.row .newProject-box .See-more-details {
+  font-size: 1.6rem;
+  font-weight: 500;
+  text-decoration: none;
+  margin: 20px;
+  padding: 10px 0;
+}
 .row .pro-img {
   width: 100%;
   height: 100%;
   padding: 20px;
 }
-.row .pro-img .img {
+.row .pro-img .img-tag {
   border-radius: 5px;
+  height: 50vh;
 }
 
 .row-2 {
@@ -509,9 +517,12 @@ main {
 .pro-img {
   width: 100%;
   height: 100%;
+  overflow: hidden; /* Ẩn phần vượt quá max-height */
 }
-.pro-img .img {
+.pro-img .img-tag {
+  display: block;
   width: 100%;
+  max-height: 100%; /* Đảm bảo chiều cao không vượt quá 100% */
 }
 
 .hero-carousel {
@@ -524,10 +535,40 @@ main {
   width: 100%;
 }
 .body-carousel-box .item {
-  display: block;
+  position: relative;
+  display: inline-block;
   -o-object-fit: cover;
      object-fit: cover;
   margin: 5px;
+}
+.body-carousel-box .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--white-color);
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+.body-carousel-box .description .description-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 3px;
+  text-decoration: none;
+}
+.body-carousel-box .description .description-details {
+  font-size: 1rem;
+}
+.body-carousel-box .item:hover .description {
+  height: 50%;
+  transform: translateX(-50%) translateY(0%);
+  opacity: 1;
 }
 
 .body-picture {
@@ -547,7 +588,7 @@ main {
 }
 
 .create-project {
-  font-size: 3rem;
+  font-size: 1.8rem !important;
   font-weight: 800;
   border-radius: 50px;
   padding: 20px 30px;

@@ -51,7 +51,7 @@
 }
 
 /* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 560px */
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 650px) {
     .header {
         display: flex;
         justify-content: space-between;
@@ -461,6 +461,7 @@ main {
 .grid{
     height: 100%;
 }
+
 .row{
     width: 100% !important;
     margin: 20px 0;
@@ -488,14 +489,22 @@ main {
             font-size: 1.4rem;
             justify-content: flex-start;
         }
+        .See-more-details{
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin: 20px;
+            padding: 10px 0;
+        }
     }
     .pro-img{
         width: 100%;
         height: 100%;
         padding: 20px;
-        .img{
-
+        .img-tag{
             border-radius: 5px;
+            height: 50vh;
+            
         }
     }
 }
@@ -564,13 +573,17 @@ main {
     height: 100%;
     width: 100%;
 }
-.pro-img{
+.pro-img {
     width: 100%;
     height: 100%;
-    .img{
+    overflow: hidden; /* Ẩn phần vượt quá max-height */
+    .img-tag {
+        display: block;
         width: 100%;
+        max-height: 100%; /* Đảm bảo chiều cao không vượt quá 100% */
     }
 }
+
 .hero-carousel{
     width: 100%;
     height: 100%;
@@ -579,11 +592,43 @@ main {
     height: 100%;
     width: 100%;
     .item{
-        display: block;
+        position: relative;
+        display: inline-block;
         object-fit: cover;
         margin: 5px;
         
         
+    }
+    
+    .description {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        color: var(--white-color);
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(100%);
+        background-color: rgba(0, 0, 0, 0.5);
+        padding: 10px;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        opacity: 0;
+            .description-title{
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin: 3px;
+                text-decoration: none;
+            }
+            .description-details{
+                font-size: 1rem;
+            }
+    }
+
+    .item:hover .description {
+        height: 50%;
+        transform: translateX(-50%) translateY(0%);
+        opacity: 1;
     }
 }
 .body-picture {
@@ -603,7 +648,7 @@ main {
 ////*create project button*/
  
 .create-project {
-    font-size: 3rem;
+    font-size: 1.8rem !important;
     font-weight: 800;
     border-radius: 50px;
     padding: 20px 30px;

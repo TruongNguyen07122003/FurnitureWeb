@@ -51,7 +51,7 @@
 }
 
 /* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 560px */
-@media only screen and (max-width: 560px) {
+@media only screen and (max-width: 650px) {
     .header {
         display: flex;
         justify-content: space-between;
