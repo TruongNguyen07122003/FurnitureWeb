@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @import url("/base.css");
-/* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 768px */
 @media only screen and (max-width: 768px) {
   .header__navbar {
     display: flex;
@@ -36,6 +35,12 @@
   .header__search:not(:hover) .header__navbar-logo--name {
     display: none;
   }
+  .header_user {
+    right: 0;
+  }
+  .header_user:hover {
+    color: yellow;
+  }
 }
 /* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 560px */
 @media only screen and (max-width: 650px) {
@@ -56,6 +61,10 @@
     justify-content: center;
     order: 2;
     flex-grow: 6;
+  }
+  .header__navbar-logo .header_user {
+    order: 3;
+    z-index: 3;
   }
   .header__mobile-menu {
     display: block !important;
@@ -173,15 +182,32 @@
   .header__search {
     display: none !important;
   }
-  .header__quote {
+  .header_user {
     order: 3;
     z-index: 3;
+    right: 0;
+    /* Align to the right */
   }
-  .header__quote-button {
-    flex-grow: 2;
-    order: 3;
+  .header_user:hover {
+    color: rgb(216, 238, 49);
   }
 }
+.header_user {
+  display: flex;
+  align-items: center;
+}
+.header_user .header__user-icon,
+.header_user .header__logout-icon {
+  font-size: 20px;
+  color: #000000;
+  cursor: pointer;
+  margin-right: 10px;
+}
+.header_user .header__user-icon:hover,
+.header_user .header__logout-icon:hover {
+  color: rgb(216, 238, 49);
+}
+
 /* Phần CSS chung */
 .header {
   height: var(--header-height);
@@ -389,237 +415,7 @@ input {
   font-size: 2rem;
 }
 
-/* --body-- */
-main {
-  display: block;
-  justify-content: center;
-  align-items: center;
-  background-color: var(--white-color);
-  height: 600px;
-  width: 100%;
-  height: 100% !important;
-}
-
-.grid {
-  height: 100%;
-}
-
-.row {
-  width: 100% !important;
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(223, 233, 244, 0.4);
-  padding: 0 3%;
-  height: 50vh;
-  flex-wrap: nowrap;
-}
-.row .newProject-box {
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.row .newProject-box .project-title {
-  margin: 0;
-  font-size: 2.6rem;
-  font-weight: 800;
-  padding: 20px;
-  left: 0;
-}
-.row .newProject-box .project-description {
-  padding: 0 20px;
-  font-size: 1.4rem;
-  justify-content: flex-start;
-}
-.row .newProject-box .See-more-details {
-  font-size: 1.6rem;
-  font-weight: 500;
-  text-decoration: none;
-  margin: 0 20px;
-  padding: 0;
-}
-.row .pro-img {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  padding: 20px;
-  justify-content: center;
-  align-items: center;
-}
-.row .img-tag {
-  display: block;
-  width: 100%;
-  border-radius: 5px;
-}
-
-.row-2 {
-  width: 100% !important;
-  margin: 20px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 3%;
-  height: 100%;
-}
-
-/* Trong CSS của bạn */
-.hero-carousel .single-carousel img {
-  width: 100%;
-  height: 80vh;
-  -o-object-fit: cover;
-     object-fit: cover;
-  -o-object-position: 50% 50%;
-     object-position: 50% 50%;
-  transition: opacity 0.5s ease;
-  z-index: 1;
-}
-
-.slick-prev {
-  position: absolute;
-  z-index: 1;
-  left: -3%;
-  top: 50%;
-}
-
-.slick-next {
-  z-index: 1;
-  top: 50%;
-  right: 10px;
-  position: absolute;
-  right: -3%;
-}
-
-.slick-prev,
-.slick-next {
-  font-size: 2rem;
-  padding: 6px 12px;
-  background-color: transparent;
-  color: var(--main-color);
-  font-weight: 500;
-  outline: none;
-  text-decoration: none;
-  border-radius: 50%;
-}
-
-.slick-prev:hover,
-.slick-next:hover {
-  background-color: var(--primary-color);
-  opacity: 0.5;
-}
-
-.fa-angle-left,
-.fa-angle-right {
-  background-color: transparent;
-  text-decoration: none;
-  color: var(--main-color);
-}
-
-.newProject-box {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  width: 100%;
-}
-
-.pro-img {
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  /* Ẩn phần vượt quá max-height */
-}
-.pro-img .img-tag {
-  display: block;
-  width: 100%;
-  max-height: 100%;
-  /* Đảm bảo chiều cao không vượt quá 100% */
-}
-
-.hero-carousel {
-  width: 100%;
-  height: 100%;
-}
-
-.body-carousel-box {
-  height: 100%;
-  width: 100%;
-}
-.body-carousel-box .item {
-  position: relative;
-  display: inline-block;
-  -o-object-fit: cover;
-     object-fit: cover;
-  margin: 5px;
-}
-.body-carousel-box .description {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  color: var(--white-color);
-  width: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
-  opacity: 0;
-}
-.body-carousel-box .description .description-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin: 3px;
-  text-decoration: none;
-}
-.body-carousel-box .description .description-details {
-  font-size: 1rem;
-}
-.body-carousel-box .item:hover .description {
-  height: 50%;
-  transform: translateX(-50%) translateY(0%);
-  opacity: 1;
-}
-
-.body-picture {
-  width: 100%;
-  height: auto;
-}
-
-.hero-carousel .single-carousel img {
-  width: 100%;
-  height: 30vh;
-  -o-object-fit: cover;
-  object-fit: cover;
-  -o-object-position: 50% 50%;
-  object-position: 50% 50%;
-  transition: opacity 0.5s ease;
-  z-index: 1;
-}
-
-.create-project {
-  font-size: 1.8rem !important;
-  font-weight: 800;
-  border-radius: 50px;
-  padding: 20px 30px;
-  border: none;
-  background-color: var(--main-color);
-  color: var(--white-color);
-  font-size: 1.4rem;
-  transition: background-color 0.3s ease, opacity 0.3s ease;
-  outline: none !important;
-  margin: 20px;
-}
-
-.create-project:hover {
-  background-color: var(--border-color);
-  opacity: 0.99;
-  cursor: pointer;
-  outline: none !important;
-}
-
-/***************foooter*************************/
+/* Footer */
 footer {
   margin: 10px 0 0 0;
   display: flex;
@@ -672,4 +468,4 @@ footer {
   font-size: 2rem;
   color: var(--text-color);
   width: 15%;
-}/*# sourceMappingURL=WebBlog.css.map */
+}/*# sourceMappingURL=CusPage.css.map */
