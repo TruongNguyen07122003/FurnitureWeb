@@ -415,6 +415,12 @@ input {
   font-size: 2rem;
 }
 
+.main-body {
+  display: flex;
+  width: 100%;
+  height: 80vh;
+}
+
 /* Footer */
 footer {
   margin: 10px 0 0 0;

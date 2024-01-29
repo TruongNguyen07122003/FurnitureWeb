@@ -568,6 +568,7 @@ main {
   opacity: 0;
 }
 .body-carousel-box .description .description-title {
+  color: var(--white-color);
   font-size: 1.4rem;
   font-weight: 600;
   margin: 3px;
@@ -575,6 +576,9 @@ main {
 }
 .body-carousel-box .description .description-details {
   font-size: 1rem;
+}
+.body-carousel-box .description .description-detail-more {
+  color: var(--white-color);
 }
 .body-carousel-box .item:hover .description {
   height: 50%;
