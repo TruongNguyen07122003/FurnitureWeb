@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("/BaseCss/base.css");
+/* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 768px */
 @media only screen and (max-width: 768px) {
   .header__navbar {
     display: flex;
@@ -35,12 +36,6 @@
   .header__search:not(:hover) .header__navbar-logo--name {
     display: none;
   }
-  .header_user {
-    right: 0;
-  }
-  .header_user:hover {
-    color: yellow;
-  }
 }
 /* Quy tắc CSS cho màn hình có chiều rộng nhỏ hơn hoặc bằng 560px */
 @media only screen and (max-width: 650px) {
@@ -61,10 +56,6 @@
     justify-content: center;
     order: 2;
     flex-grow: 6;
-  }
-  .header__navbar-logo .header_user {
-    order: 3;
-    z-index: 3;
   }
   .header__mobile-menu {
     display: block !important;
@@ -182,133 +173,15 @@
   .header__search {
     display: none !important;
   }
-  .header_user {
+  .header__quote {
     order: 3;
     z-index: 3;
-    right: 0;
-    /* Align to the right */
   }
-  .header_user:hover {
-    color: rgb(216, 238, 49);
+  .header__quote-button {
+    flex-grow: 2;
+    order: 3;
   }
 }
-.header_user {
-  display: flex;
-  align-items: center;
-}
-.header_user .header__user-icon,
-.header_user .header__logout-icon {
-  font-size: 20px;
-  color: #000000;
-  cursor: pointer;
-  margin-right: 10px;
-}
-.header_user .header__user-icon:hover,
-.header_user .header__logout-icon:hover {
-  color: var(--highlight-color);
-}
-
-/** main body*/
-body,
-html {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #26394E;
-}
-
-#menu {
-  height: 100%;
-  position: fixed;
-  background-color: #FED057;
-  width: 300px;
-  transition: 1000ms all cubic-bezier(0.19, 1, 0.22, 1);
-  transform: translateX(-100%);
-  left: 60px;
-}
-
-#menu.expanded {
-  transform: translateX(0%);
-  left: 0px;
-}
-
-.menu-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-#blob {
-  top: 0;
-  z-index: -1;
-  right: 60px;
-  transform: translateX(100%);
-  height: 100%;
-  position: absolute;
-}
-
-#blob-path {
-  height: 100%;
-  fill: #FED057;
-}
-
-.hamburger {
-  right: 20px;
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  margin-top: -10px;
-}
-
-.hamburger .line {
-  width: 100%;
-  height: 4px;
-  background-color: #fff;
-  position: absolute;
-}
-
-.hamburger .line:nth-child(2) {
-  top: 50%;
-  margin-top: -2px;
-}
-
-.hamburger .line:nth-child(3) {
-  bottom: 0;
-}
-
-h1 {
-  position: fixed;
-  right: 0;
-  margin: 0;
-}
-
-ul {
-  padding: 0;
-  list-style: none;
-  width: 80%;
-  margin-left: 10%;
-  position: absolute;
-  top: 10px;
-}
-
-ul li {
-  color: #fff;
-  font-family: sans-serif;
-  padding: 20px 0;
-}
-
-h2 {
-  position: absolute;
-  left: 50%;
-  color: #fff;
-  margin: 0;
-  font-size: 16px;
-  font-family: sans-serif;
-  font-weight: 100;
-}
-
-/********************************************************************************************/
 /* Phần CSS chung */
 .header {
   height: var(--header-height);
@@ -414,7 +287,6 @@ ul {
   height: 24px;
   top: 68px;
   left: 455px;
-  font-family: Montserrat;
   font-size: 2rem;
   font-weight: 600;
   line-height: 24px;
@@ -494,12 +366,90 @@ input {
   outline: none !important;
 }
 
-.header__quote:hover,
 .header__quote-button:hover {
-  background-color: var(--border-color);
   opacity: 0.99;
   cursor: pointer;
   outline: none !important;
+}
+
+.header__quote #close {
+  overflow: hidden;
+  position: relative;
+  border: none;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--main-color);
+  font: inherit;
+  text-indent: 100%;
+  cursor: pointer;
+  top: -30px;
+  right: -150px;
+}
+.header__quote #close:focus {
+  outline: solid 0 transparent;
+  box-shadow: 0 0 0 2px var(--main-color);
+}
+.header__quote #close:hover {
+  background: var(--primary-color);
+}
+.header__quote #close:before, .header__quote #close:after {
+  position: absolute;
+  top: 15%;
+  left: calc(50% - 0.0625em);
+  width: 0.125em;
+  height: 70%;
+  border-radius: 0.125em;
+  transform: rotate(45deg);
+  background: currentcolor;
+  content: "";
+}
+.header__quote #close:after {
+  transform: rotate(-45deg);
+}
+.header__quote .login-card {
+  background-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  border-radius: 8px;
+  width: 350px;
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 999;
+}
+.header__quote .login-card form {
+  display: flex;
+  flex-direction: column;
+}
+.header__quote .login-card form label {
+  display: flex;
+  margin-bottom: 8px;
+  font-weight: bold;
+  justify-content: flex-start;
+}
+.header__quote .login-card form input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+.header__quote .login-card form .regis-button {
+  background-color: var(--main-color);
+  color: var(--white-color);
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 10px;
+}
+.header__quote .login-card form .regis-button:hover {
+  background-color: var(--main-color);
 }
 
 .header__mobile-menu {
@@ -514,65 +464,4 @@ input {
   display: inline-block;
   color: var(--text-color);
   font-size: 2rem;
-}
-
-.main-body {
-  display: flex;
-  width: 100%;
-  height: 80vh;
-}
-
-/* Footer */
-footer {
-  margin: 10px 0 0 0;
-  display: flex;
-  height: 12vh;
-  z-index: 1;
-}
-
-.footer-box {
-  position: relative;
-  display: flex;
-  height: 100%;
-  justify-content: space-between;
-  background-color: var(--primary-color);
-}
-
-.web-info {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  margin-left: 3%;
-  width: 50%;
-}
-.web-info .contact {
-  display: block;
-  justify-content: flex-start;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-.web-info .info {
-  font-size: 1.2rem;
-  font-weight: 300;
-}
-
-.follow-us {
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.follow-us .follow-title {
-  font-size: 1.6rem;
-  margin-bottom: 10px;
-}
-.follow-us .logo-box {
-  display: flex;
-  justify-content: space-between;
-  font-size: 2rem;
-  color: var(--text-color);
-  width: 15%;
-}/*# sourceMappingURL=CusPage.css.map */
+}/*# sourceMappingURL=Header.css.map */
