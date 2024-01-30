@@ -373,6 +373,43 @@ input {
   outline: none !important;
 }
 
+.header__quote #close {
+  overflow: hidden;
+  position: relative;
+  border: none;
+  padding: 0;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--main-color);
+  font: inherit;
+  text-indent: 100%;
+  cursor: pointer;
+  top: -30px;
+  right: -150px;
+}
+.header__quote #close:focus {
+  outline: solid 0 transparent;
+  box-shadow: 0 0 0 2px var(--main-color);
+}
+.header__quote #close:hover {
+  background: var(--primary-color);
+}
+.header__quote #close:before, .header__quote #close:after {
+  position: absolute;
+  top: 15%;
+  left: calc(50% - 0.0625em);
+  width: 0.125em;
+  height: 70%;
+  border-radius: 0.125em;
+  transform: rotate(45deg);
+  background: currentcolor;
+  content: "";
+}
+.header__quote #close:after {
+  transform: rotate(-45deg);
+}
 .header__quote .login-card {
   background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -431,7 +468,7 @@ input {
 }
 
 /* --body-- */
-main {
+.main {
   display: block;
   justify-content: center;
   align-items: center;
@@ -480,6 +517,7 @@ main {
   outline: none;
   text-decoration: none;
   border-radius: 50%;
+  cursor: pointer;
 }
 
 .slick-prev:hover, .slick-next:hover {

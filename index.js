@@ -16,13 +16,12 @@ $(document).ready(function() {
     });
 
 });
-
 document.addEventListener("DOMContentLoaded", function() {
-    // Lấy tham chiếu đến nút "Quote"
     var quoteButton = document.getElementById("quoteButton");
-    var overlay = document.getElementById("overlay");
-    // Lấy tham chiếu đến thẻ chứa form login
     var loginCard = document.getElementById("loginCard");
+    var closeBtn = document.getElementById("close");
+    var overlay = document.getElementById("overlay");
+    var body = document.getElementsByClassName("main")[0]; 
 
     // Bắt sự kiện click vào nút "Quote"
     quoteButton.addEventListener("click", function() {
@@ -31,17 +30,24 @@ document.addEventListener("DOMContentLoaded", function() {
         overlay.style.zIndex = "100";
         overlay.style.backgroundColor="#DFE9F4";
         overlay.style.opacity="0.5";
+        body.style.pointerEvents = "none";
     });
-    document.addEventListener("DOMContentLoaded", function() {
-        var quoteButton = document.getElementById("quoteButton");
-        var loginCard = document.getElementById("loginCard");
-    
-        quoteButton.addEventListener("click", function() {
-            loginCard.style.opacity = "1"; // Hiển thị form login
-        });
+
+    // Bắt sự kiện click vào nút "Close"
+    closeBtn.addEventListener("click", function() {
+        // Ẩn form login
+        loginCard.style.display = "none";
+        // Đặt lại giá trị của lớp phủ
+        overlay.style.zIndex = "-1";
+        overlay.style.backgroundColor = "rgba(0, 0, 0, 0.05)";
+        overlay.style.opacity = "0";
+        // Khôi phục các thuộc tính của phần tử .main
+        body.style.pointerEvents = "auto";
     });
+});
+
     
+        
 
     
     
-});

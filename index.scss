@@ -434,6 +434,42 @@ input {
 
 ////login form
 .header__quote {
+    #close {
+        overflow: hidden;
+        position: relative;
+        border: none;
+        padding: 0;
+        width: 2em; height: 2em;
+        border-radius: 50%;
+        background: transparent;
+        color: var(--main-color);
+        font: inherit;
+        text-indent: 100%;
+        cursor: pointer;
+        top: -30px;
+        right: -150px;
+        
+        &:focus {
+            outline: solid 0 transparent;
+            box-shadow: 0 0 0 2px var(--main-color);
+        }
+        
+        &:hover {
+            background: var(--primary-color);
+        }
+        
+        &:before, &:after {
+            position: absolute;
+            top: 15%; left: calc(50% - .0625em);
+            width: .125em; height: 70%;
+            border-radius: .125em;
+            transform: rotate(45deg);
+            background: currentcolor;
+            content: ''
+        }
+        
+        &:after { transform: rotate(-45deg); }
+    }
     .login-card {
         background-color: rgba(255, 255, 255, 0.8);
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -499,7 +535,7 @@ input {
 }
 
 /* --body-- */
-main {
+.main {
     display: block;
     justify-content: center;
     align-items: center;
@@ -548,6 +584,7 @@ main {
     outline: none;
     text-decoration: none;
     border-radius: 50%;
+    cursor: pointer;
  }
  .slick-prev:hover, .slick-next:hover{
     
