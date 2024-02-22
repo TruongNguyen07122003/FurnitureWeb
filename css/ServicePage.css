@@ -670,6 +670,9 @@ main {
 .body-carousel-box .description .description-detail-more {
   color: var(--white-color);
 }
+.body-carousel-box .description .description-detail-more:hover {
+  color: var(--highlight-color);
+}
 .body-carousel-box .item:hover .description {
   height: 50%;
   transform: translateX(-50%) translateY(0%);

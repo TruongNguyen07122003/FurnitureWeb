@@ -763,7 +763,11 @@ main {
         }
         .description-detail-more{
             color: var(--white-color);
+            &:hover{
+                color:var(--highlight-color);
+            }
         }
+        
     }
 
     .item:hover .description {

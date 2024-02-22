@@ -1,0 +1,92 @@
+@import url("/BaseCss/base.css");
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+.grid {
+  max-width: 1200px;
+  margin-top: 20px;
+}
+.grid .container {
+  background: linear-gradient(to bottom, #ebf3fa, var(--white-color));
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 20px;
+}
+.grid .container .title {
+  font-size: 4rem;
+  color: var(--black-color);
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+.grid .container .content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.grid .container .content .box {
+  background: linear-gradient(180deg, var(--white-color) 50%, #c1e0fb 100%);
+  display: flex;
+  flex-direction: column;
+  margin: 20px 10px;
+  align-items: center;
+  width: 30%;
+}
+.grid .container .content .box .project-img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+.grid .container .content .box .project-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.grid .container .content .box .project-info p {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 0 20px;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+.grid .container .content .box .project-price {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: var(--text-color);
+  margin-bottom: 10px;
+}
+.grid .container .content .box .project-price p {
+  font-size: 1.6rem;
+  font-weight: 400;
+}
+.grid .container .content .box .project-price p:last-child {
+  padding-left: 10px;
+  font-weight: 600;
+}
+.grid .container .content .box a {
+  text-decoration: none;
+  color: #000c2c;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-size: 1.6rem;
+}
+.grid .container .content .box a:hover {
+  color: var(--highlight-color);
+  cursor: pointer;
+}/*# sourceMappingURL=LivingRoom.css.map */

@@ -59,7 +59,7 @@
   /* Căn chỉnh cho phần tử chứa hình ảnh */
   position: relative;
   width: 100vw;
-  height: 100%;
+  height: 80%;
   overflow: hidden;
 }
 .main .grid .fullscreen-background .body-img {
@@ -272,6 +272,9 @@
   color: var(--white-color);
   font-size: 1.8rem;
 }
+.main .grid .body-carousel-box .description .description-detail-more:hover {
+  color: var(--highlight-color);
+}
 .main .grid .body-carousel-box .item:hover .description {
   height: 50%;
   transform: translateX(-50%) translateY(0%);
@@ -317,7 +320,7 @@
 }
 .main .grid .staff-introduction .staff-carousel .staff-container {
   height: 60vh;
-  background-color: var(--primary-color);
+  background: linear-gradient(to bottom, var(--primary-color), var(--white-color));
   text-decoration: none;
   color: #333;
   display: flex;
