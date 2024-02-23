@@ -18,8 +18,259 @@
 
 .grid {
     max-width: 1200px;
-    margin-top: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
     
+.row {
+    width: 100% !important;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(223, 233, 244, 0.4);
+    padding: 0 3%;
+    height: 50vh;
+    flex-wrap: nowrap;
+
+
+    .newProject-box {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .project-title {
+            margin: 0;
+            font-size: 2.6rem;
+            font-weight: 800;
+            padding: 20px;
+            left: 0;
+        }
+
+        .project-description {
+            padding: 0 20px;
+            font-size: 1.4rem;
+            justify-content: flex-start;
+        }
+
+        .See-more-details {
+            font-size: 1.6rem;
+            font-weight: 500;
+            text-decoration: none;
+            margin: 0 20px;
+            padding: 0;
+        }
+    }
+
+    .pro-img {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .img-tag {
+        display: block;
+        width: 100%;
+
+        border-radius: 5px;
+    }
+
+}
+    .row-2 {
+        width: 100% !important;
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 3%;
+        height: 100%;
+    }
+    
+    /* Trong CSS của bạn */
+    .hero-carousel {
+        .single-carousel {
+            img {
+                width: 100%;
+                height: 80vh;
+                object-fit: cover;
+                object-position: 50% 50%;
+                transition: opacity 0.5s ease;
+                z-index: 1;
+            }
+    
+        }
+    
+    }
+    
+    .slick-prev {
+        position: absolute;
+        z-index: 1;
+        left: -3%;
+        top: 50%;
+    }
+    
+    .slick-next {
+        z-index: 1;
+        top: 50%;
+        right: 10px;
+        position: absolute;
+        right: -3%;
+    }
+    
+    .slick-prev,
+    .slick-next {
+        font-size: 2rem;
+        padding: 6px 12px;
+        background-color: transparent;
+        color: var(--main-color);
+        font-weight: 500;
+        outline: none;
+        text-decoration: none;
+        border-radius: 50%;
+    }
+    
+    .slick-prev:hover,
+    .slick-next:hover {
+    
+        background-color: var(--primary-color);
+        opacity: 0.5;
+    
+    
+    }
+    
+    .fa-angle-left,
+    .fa-angle-right {
+        background-color: transparent;
+        text-decoration: none;
+        color: var(--main-color);
+    }
+    
+    .newProject-box {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    
+    .pro-img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    
+        /* Ẩn phần vượt quá max-height */
+        .img-tag {
+            display: block;
+            width: 100%;
+            max-height: 100%;
+            /* Đảm bảo chiều cao không vượt quá 100% */
+        }
+    }
+    
+    .hero-carousel {
+        width: 100%;
+        height: 100%;
+    }
+    
+    .body-carousel-box {
+        height: 100%;
+        width: 100%;
+    
+        .item {
+            position: relative;
+            display: inline-block;
+            object-fit: cover;
+            margin: 5px;
+    
+    
+        }
+    
+        .description {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            color: var(--white-color);
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+            opacity: 0;
+    
+            .description-title {
+                color: var(--white-color);
+                font-size: 1.4rem;
+                font-weight: 600;
+                margin: 3px;
+                text-decoration: none;
+            }
+    
+            .description-details {
+                font-size: 1rem;
+            }
+            .description-detail-more{
+                color: var(--white-color);
+                &:hover{
+                    color:var(--highlight-color);
+                }
+            }
+            
+        }
+    
+        .item:hover .description {
+            height: 50%;
+            transform: translateX(-50%) translateY(0%);
+            opacity: 1;
+        }
+    }
+    
+    .body-picture {
+        width: 100%;
+        height: auto;
+    }
+    
+    .hero-carousel .single-carousel img {
+        width: 100%;
+        height: 30vh;
+        -o-object-fit: cover;
+        object-fit: cover;
+        -o-object-position: 50% 50%;
+        object-position: 50% 50%;
+        transition: opacity 0.5s ease;
+        z-index: 1;
+    }
+    
+    ////*create project button*/
+    
+    .create-project {
+        font-size: 1.8rem !important;
+        font-weight: 800;
+        border-radius: 50px;
+        padding: 20px 30px;
+        border: none;
+        background-color: var(--main-color);
+        color: var(--white-color);
+        font-size: 1.4rem;
+        transition: background-color 0.3s ease, opacity 0.3s ease;
+        outline: none !important;
+        margin: 20px;
+    }
+    
+    
+    .create-project:hover {
+        background-color: var(--border-color);
+        opacity: 0.99;
+        cursor: pointer;
+        outline: none !important;
+    }
+      
+      
     .container {
         background: linear-gradient(to bottom, #ebf3fa, var(--white-color));
         display: flex;
@@ -150,7 +401,7 @@
                     
             }
         }
-        .quote-form {
+    .quote-form {
             border-radius: 10px;
             background: var(--primary-color);
             width: 100%;
