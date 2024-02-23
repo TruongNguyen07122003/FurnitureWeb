@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.ntt-sidebar-items {
+  @apply hover:bg-slate-100 cursor-pointer mb-6 text-slate-950 py-4;
+}

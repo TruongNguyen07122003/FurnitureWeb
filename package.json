@@ -1,0 +1,10 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.1"
+  },
+  "scripts": {
+    "test": "echo\"Error: no test specified\" && exit 1",
+    "build:css": "tailwindcss -i ./WebPage/input.css -o ./WebPage/output.css --watch",
+    "start:dev": "live-server public"
+  }
+}
